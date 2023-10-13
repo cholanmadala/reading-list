@@ -1,0 +1,7 @@
+.book {
+    border: 1px dotted #000;
+    height: 300px;
+    min-width: 300px;
+    margin: 5px;
+    padding: 15px;
+}

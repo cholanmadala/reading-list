@@ -1,0 +1,6 @@
+.edit-book-container {
+    padding: 15px;
+    border: 1px dotted #000;
+    min-width: 300px;
+    margin: 5px;
+}

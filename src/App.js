@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import BookCreate from "./BookCreate";
+import BookList from "./BookList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [list, setList] = useState([]);
+
+    const formSubmission = (newStudent) => {
+        setList([...list, {id: (list.length + 1), fname: newStudent.fname, lname: newStudent.lname}]);
+    }
+
+    const deleteItem = (itemId) => {
+        const newList = list.filter(item => item.id !== itemId);
+        setList(newList);
+    };
+        
+    const editItem = (itemId, newName) => {
+        const updatedList = list.map((i) => {
+            if (i.id === itemId) {
+                return {...i, fname: newName.fname, lname: newName.lname}
+            }
+            return i;
+        });
+        setList(updatedList);
+    };
+
+    return (
+        <>
+        <BookList list={list} handleDelete={deleteItem} handleEdit={editItem} />
+        <BookCreate formSubmission={formSubmission} />
+        </>
+    )
+};
 
 export default App;
