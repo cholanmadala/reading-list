@@ -13,13 +13,11 @@ const Book = ({item, handleDelete, handleEdit}) => {
 		setEdit(true);
 	};
 
-	const editHandlerBook = (name) => {
+	const editHandlerBook = (name, flag) => {
 		handleEdit(item.id, name);
-	}
-
-	const editSubmitHandler = (flag) => {
 		setEdit(flag);
 	}
+
 	const renderBook = (<div className='book'>
 			<button onClick={editHandler}>Edit</button>
 			<button onClick={deleteHandler}>Delete</button>
@@ -28,8 +26,7 @@ const Book = ({item, handleDelete, handleEdit}) => {
 
 	return edit ? 
 		<EditBook  
-			handleEdit={editHandlerBook}
-			handleSubmit={editSubmitHandler}
+			handleSubmit={editHandlerBook}
 			defaultValue={item}
 		/> :
 		renderBook;

@@ -2,7 +2,7 @@ import { useState } from "react";
 import './EditBook.css';
 
 
-const EditBook = ({handleEdit, handleSubmit, defaultValue}) => {
+const EditBook = ({handleSubmit, defaultValue}) => {
     const [student, setStudent] = useState(defaultValue);
     const inputHandlerFname = (ev) => {
         setStudent({...student, fname: ev.target.value});
@@ -16,8 +16,7 @@ const EditBook = ({handleEdit, handleSubmit, defaultValue}) => {
     }
 
     const submitHandler = () => {
-        handleEdit(student);
-        handleSubmit(false);
+        handleSubmit(student, false);
     }
 
     return (
