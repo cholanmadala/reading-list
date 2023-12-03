@@ -1,0 +1,25 @@
+{
+  "students": [
+    {
+      "fname": "Cholan",
+      "lname": "Madala",
+      "id": 1
+    },
+    {
+      "fname": "Dhanusha Lakshmi",
+      "lname": "Madala",
+      "id": 2
+    }
+  ],
+  "books": [
+    {
+      "name": "Harry Potter",
+      "id": 1233
+    }
+  ],
+  "colleges": [
+    "Gitam",
+    "BITS-GOA",
+    "BITS-PILANI"
+  ]
+}

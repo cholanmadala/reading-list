@@ -1,13 +1,15 @@
 import { useState } from "react";
-import './EditBook.css';
+import './EditStudent.css';
 
 
-const EditBook = ({handleSubmit, defaultValue}) => {
+const EditStudent = ({handleSubmit, defaultValue}) => {
     const [student, setStudent] = useState(defaultValue);
     const inputHandlerFname = (ev) => {
+        ev.stopPropagation();
         setStudent({...student, fname: ev.target.value});
     }
     const inputHandlerLname = (ev) => {
+        ev.stopPropagation();
         setStudent({...student, lname: ev.target.value});
     }
 
@@ -38,4 +40,4 @@ const EditBook = ({handleSubmit, defaultValue}) => {
     )
 }
 
-export default EditBook;
+export default EditStudent;

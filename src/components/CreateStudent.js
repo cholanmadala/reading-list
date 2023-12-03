@@ -1,9 +1,9 @@
 import { useState } from "react";
-import './BookCreate.css';
+import './CreateStudent.css';
 
-const BookCreate = ({formSubmission}) => {
+const CreateStudent = ({onSubmit}) => {
     const [student, setStudent] = useState({fname: '', lname: ''});
-    
+
     const handleFormSubmit = (ev) => {
         ev.preventDefault();
     }
@@ -17,8 +17,10 @@ const BookCreate = ({formSubmission}) => {
     }
     const submitForm = () => {
         if (Object.values(student).length) {
-            formSubmission(student);
+            onSubmit(student);
             setStudent({fname: '', lname: ''});
+        } else {
+            console.log('hello');
         }
     }
     return (
@@ -36,4 +38,4 @@ const BookCreate = ({formSubmission}) => {
     )
 };
 
-export default BookCreate;
+export default CreateStudent;
