@@ -1,12 +1,18 @@
 import Student from './Student';
 import './Students.css';
+import { useContext } from 'react';
+import StudentContext from '../context/StudentContext';
 
-const Students = ({list}) => {
-    
-    const renderBooks = () => list.map((item, index) => 
+
+
+const Students = () => {
+ 
+    const {list} = useContext(StudentContext);
+
+    const renderBooks = () => list.map((student, index) => 
         <Student
-            key={`${item}.${index}`} 
-            item={item} 
+            key={`${student}.${index}`} 
+            item={student}
         />
     );
 

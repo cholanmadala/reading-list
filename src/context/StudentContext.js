@@ -9,6 +9,11 @@ const Provider = ({children}) => {
     
     // on initial render, load all students data
     useEffect(() => {
+        getStudents();
+    }, []);
+
+    // get students
+    const getStudents = async () => {
         // Send a GET request
         axios({
             method: 'get',
@@ -18,7 +23,7 @@ const Provider = ({children}) => {
         }).catch(function (error) {
             console.error(error);
         });
-    }, []);
+    }
 
     // create student
     const createStudent = async (newStudent) => {

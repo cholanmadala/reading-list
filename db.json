@@ -1,16 +1,5 @@
 {
-  "students": [
-    {
-      "fname": "Cholan",
-      "lname": "Madala",
-      "id": 1
-    },
-    {
-      "fname": "Dhanusha Lakshmi",
-      "lname": "Madala",
-      "id": 2
-    }
-  ],
+  "students": [],
   "books": [
     {
       "name": "Harry Potter",

@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import StudentContext from "../context/StudentContext";
 import './CreateStudent.css';
 
-const CreateStudent = ({onSubmit}) => {
+const CreateStudent = () => {
     const [student, setStudent] = useState({fname: '', lname: ''});
+    const {createStudent} = useContext(StudentContext);
 
     const handleFormSubmit = (ev) => {
         ev.preventDefault();
@@ -17,10 +19,10 @@ const CreateStudent = ({onSubmit}) => {
     }
     const submitForm = () => {
         if (Object.values(student).length) {
-            onSubmit(student);
+            createStudent(student);
             setStudent({fname: '', lname: ''});
         } else {
-            console.log('hello');
+            console.error('form not submitted');
         }
     }
     return (
