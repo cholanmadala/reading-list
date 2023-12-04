@@ -1,11 +1,11 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import './Student.css';
 import EditStudent from './EditStudent';
-import StudentContext from '../context/StudentContext';
+import useStudentsContext from '../hooks/use-students-context';
 
 const Student = ({item}) => {
 	const [edit, setEdit] = useState(false);
-	const {deleteStudent, updateStudent} = useContext(StudentContext);
+	const {deleteStudent, updateStudent} = useStudentsContext();
 
 	const deleteHandler = () => {
 		deleteStudent(item.id);

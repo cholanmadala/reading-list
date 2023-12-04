@@ -1,10 +1,10 @@
-import { useState, useContext } from "react";
-import StudentContext from "../context/StudentContext";
+import { useState } from "react";
 import './CreateStudent.css';
+import useStudentsContext from "../hooks/use-students-context";
 
 const CreateStudent = () => {
     const [student, setStudent] = useState({fname: '', lname: ''});
-    const {createStudent} = useContext(StudentContext);
+    const {createStudent} = useStudentsContext();
 
     const handleFormSubmit = (ev) => {
         ev.preventDefault();
