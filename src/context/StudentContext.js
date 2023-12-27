@@ -1,5 +1,5 @@
 import axios from "axios";
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState, useCallback } from "react";
 
 const StudentContext = createContext();
 
@@ -7,13 +7,8 @@ const Provider = ({children}) => {
 
     const [list, setList] = useState([]);
     
-    // on initial render, load all students data
-    useEffect(() => {
-        getStudents();
-    }, []);
-
     // get students
-    const getStudents = async () => {
+    const getStudents = useCallback(async () => {
         // Send a GET request
         axios({
             method: 'get',
@@ -23,7 +18,7 @@ const Provider = ({children}) => {
         }).catch(function (error) {
             console.error(error);
         });
-    }
+    }, []);
 
     // create student
     const createStudent = async (newStudent) => {
@@ -88,6 +83,7 @@ const Provider = ({children}) => {
 
     const studentContext = {
         list,
+        getStudents,
         createStudent,
         updateStudent,
         deleteStudent

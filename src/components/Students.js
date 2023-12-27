@@ -1,3 +1,5 @@
+import { Suspense } from "react";
+import { Loading } from "../App";
 import Student from './Student';
 import './Students.css';
 import useStudentsContext from '../hooks/use-students-context';
@@ -14,9 +16,11 @@ const Students = () => {
     );
 
     return (
+        <Suspense fallback={<Loading />}>
         <div className="book-list-container">
             {renderBooks()}
         </div>
+        </Suspense>
     )
 };
 export default Students;

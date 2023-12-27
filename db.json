@@ -1,5 +1,26 @@
 {
-  "students": [],
+  "students": [
+    {
+      "fname": "cholan",
+      "lname": "M",
+      "id": 1
+    },
+    {
+      "fname": "dha",
+      "lname": "lakk",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "fname": "DD",
+      "lname": "M"
+    },
+    {
+      "fname": "K",
+      "lname": "M M",
+      "id": 4
+    }
+  ],
   "books": [
     {
       "name": "Harry Potter",
